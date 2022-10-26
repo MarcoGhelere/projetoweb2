@@ -223,6 +223,65 @@ nav a:hover{
     background-color: #E12A31;
 }
 
+.loginsection { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.loginsection h1 {
+    font-size: 20px;
+    color: #909090;
+    letter-spacing: 5px;
+}
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 50px 0;
+}
+
+.login-box p{
+    font: 500 1rem 'Rubik', sans-serif;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px 0 10px 0;
+    /* background-color: red; */
+}
+
+.password-input{
+    margin-bottom: 20px;
+}
+
+input {
+    font: 400 1rem 'Rubik', sans-serif;
+    font-size: 16px;
+    color: black;
+    outline: 0;
+    border: 0;
+    /* border-bottom: 0.05rem solid black; */
+    padding: 10px 15px;
+}
+
+.submit-btn{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    background-color: green;
+    color: white;
+}
+
+.submit-btn:hover{
+    background-color: rgb(90, 146, 90);
+}
+
+.login-itens {
+    /* background-color: blue; */
+}
+
 @media (max-width: 1200px) {
     .desktopheader{
         display: none;
