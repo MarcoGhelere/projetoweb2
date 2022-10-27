@@ -25,8 +25,11 @@ function login(event){
             
             if(!data.error){
                 //Caso nao haja erro no login, ira aparecer a barra de pesquisa:
-                document.getElementById("searchbar").classList.add("turnvisible");
                 localStorage.setItem("token", data.token);
+
+                document.getElementById("searchbar").classList.add("turnvisible");
+                document.getElementById("logout-button").classList.add("turnvisible");
+                document.getElementById("form-login").classList.add("turninvisible");
             }
         })
         .catch((error) => {
@@ -35,10 +38,19 @@ function login(event){
         
 }
 
-if(localStorage.getItem("token") != null) {
-    console.log(document.getElementById("searchbar"));
-    document.getElementById("searchbar").classList.add("turnvisible");
+function logout(){
+    localStorage.removeItem("token");
+    document.getElementById("form-login").classList.add("turnvisible");
+    document.getElementById("logout-button").classList.add("turninvisible");
+
+    window.location.reload();
 }
+
+if(localStorage.getItem("token") != null) {
+    document.getElementById("searchbar").classList.add("turnvisible");
+    document.getElementById("form-login").classList.add("turninvisible");
+}
+
 
 // const xhr = new XMLHttpRequest();
 //     xhr.open("POST", "https://reqres.in/api/login", true);

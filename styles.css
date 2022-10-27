@@ -252,6 +252,12 @@ nav a:hover{
     /* background-color: red; */
 }
 
+.form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .password-input{
     margin-bottom: 20px;
 }
@@ -269,9 +275,10 @@ input {
 .submit-btn{
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 20px 10px 20px;
     background-color: green;
     color: white;
+    align-self: center;
 }
 
 .submit-btn:hover{
@@ -284,10 +291,25 @@ input {
 
 .searchbar {
     display: none;
+    margin: 40px;
+}
+
+.logout-button {
+    display: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: red;
+    color: white;
+    align-self: center;
 }
 
 .turnvisible {
     display: flex;
+}
+
+.turninvisible{
+    display: none;
 }
 
 @media (max-width: 1200px) {
