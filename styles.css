@@ -282,6 +282,14 @@ input {
     /* background-color: blue; */
 }
 
+.searchbar {
+    display: none;
+}
+
+.turnvisible {
+    display: flex;
+}
+
 @media (max-width: 1200px) {
     .desktopheader{
         display: none;
