@@ -31,9 +31,14 @@ function login(event){
                 document.getElementById("logout-button").classList.add("turnvisible");
                 document.getElementById("form-login").classList.add("turninvisible");
             }
+            else {
+                alert("Usuário não encontrado, tente usar o seguinte e-mail: eve.holt@reqres.in");
+            }
+            
         })
         .catch((error) => {
             console.error('Error:', error);
+            
         });
         
 }
