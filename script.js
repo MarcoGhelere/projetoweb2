@@ -2,7 +2,7 @@ function login(event){
     //Codigo da funcao fetch, obtida de: 
     //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_json_data
 
-    event.preventDefault() //previne o botao submit de recarregar a pagina
+    event.preventDefault(); //previne o botao submit de recarregar a pagina
 
     const data = {
         "email": document.getElementById("email-input").value,
@@ -27,7 +27,7 @@ function login(event){
                 //Caso nao haja erro no login, ira aparecer a barra de pesquisa:
                 localStorage.setItem("token", data.token);
 
-                document.getElementById("searchbar").classList.add("turnvisible");
+                document.getElementById("searchtext").classList.add("turnvisible");
                 document.getElementById("logout-button").classList.add("turnvisible");
                 document.getElementById("form-login").classList.add("turninvisible");
             }
@@ -46,8 +46,50 @@ function logout(){
     window.location.reload();
 }
 
+function validate(event){
+    event.preventDefault();
+
+    const search = document.getElementById("searchbar").value;
+    const urlapi= "https://swapi.dev/api/people/?search=" + search; //Passando o link para a API
+
+    const resultadoPesquisa = document.querySelector("[resultado-pesquisa]");
+    const containerNome = document.querySelector("[conteudo-nome]");
+
+    containerNome.innerHTML = "";
+
+    fetch(urlapi, {
+        method: 'GET', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log('Success:', data);
+
+        if(data.count == 0) {
+            console.log('No character found');
+            alert("Não foi encontrado nenhum personagem com esse nome!")
+        }
+        else {
+            data.results.forEach(personagem => {
+                const nomeResultado = resultadoPesquisa.content.cloneNode(true);
+                nomeResultado.children[1].innerHTML = personagem.name;
+                containerNome.append(nomeResultado);
+            });
+            console.log('Success:', data.results[0].name);
+            //const resultado = resultadoPesquisa.content.cloneNode(true);
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+}
+
 if(localStorage.getItem("token") != null) {
-    document.getElementById("searchbar").classList.add("turnvisible");
+    document.getElementById("searchtext").classList.add("turnvisible");
+    document.getElementById("logout-button").classList.add("turnvisible");
     document.getElementById("form-login").classList.add("turninvisible");
 }
 

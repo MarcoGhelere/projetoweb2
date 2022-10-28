@@ -289,9 +289,28 @@ input {
     /* background-color: blue; */
 }
 
-.searchbar {
+.searchtext {
     display: none;
+    flex-direction: column;
+
+    /* width: 100%; */
+}
+
+.searchbar {
+    width: 80%;
     margin: 40px;
+    align-self: center;
+}
+
+.botao-consulta {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: green;
+    color: white;
+    align-self: center;
+    margin-bottom: 40px;
+    font-weight: bold;
 }
 
 .logout-button {
@@ -302,6 +321,7 @@ input {
     background-color: red;
     color: white;
     align-self: center;
+    font-weight: bold;
 }
 
 .turnvisible {
@@ -310,6 +330,35 @@ input {
 
 .turninvisible{
     display: none;
+}
+
+.conteudo-nome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom:20px;
+}
+
+.resultados-linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.label-nome {
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.texto-nome {
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    align-self: center;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 1200px) {

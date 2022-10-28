@@ -94,7 +94,23 @@
                 </form>
                 <button class="logout-button" id="logout-button" onclick="logout()">LOGOUT</button>
             </div>
-            <input type="search" name="" id="searchbar" class="searchbar">
+            <!-- <input type="search" name="" id="searchbar" class="searchbar"> -->
+            <form class="searchtext" id="searchtext" onsubmit="validate(event)">
+                <input name="" id="searchbar" class="searchbar" cols="30" rows="10" placeholder="Digite um nome de um personagem de Star Wars:"></input>
+                
+                <div class="conteudo-nome" conteudo-nome></div>
+                <template resultado-pesquisa>
+                        <label class="label-nome">Nome: </label>
+                        <p class="texto-nome"></p>
+                </template>
+                
+                <button type="submit" class="botao-consulta">CONSULTAR</button>
+
+                
+                
+
+            </form>
+            
         </section>
     </div>
 
