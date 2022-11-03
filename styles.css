@@ -243,6 +243,14 @@ nav a:hover{
     padding: 50px 0 50px 0;
 }
 
+.error-login {
+    color: red;
+    font: 500 1rem 'Rubik', sans-serif;
+    font-size: 20px;
+    align-self: center;
+    display: none;
+}
+
 .login-box p{
     font: 500 1rem 'Rubik', sans-serif;
     color: white;
@@ -294,6 +302,15 @@ input {
     flex-direction: column;
 
     /* width: 100%; */
+}
+.search-error {
+    color: red;
+    font: 500 1rem 'Rubik', sans-serif;
+    font-size: 20px;
+    align-self: center;
+    display: none;
+    margin-bottom: 15px;
+    
 }
 
 .searchbar {

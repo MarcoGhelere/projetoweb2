@@ -30,9 +30,10 @@ function login(event){
                 document.getElementById("searchtext").classList.add("turnvisible");
                 document.getElementById("logout-button").classList.add("turnvisible");
                 document.getElementById("form-login").classList.add("turninvisible");
+                document.getElementById("error-login").classList.add("turninvisible")
             }
             else {
-                alert("Usuário não encontrado, tente usar o seguinte e-mail: eve.holt@reqres.in");
+                document.getElementById("error-login").classList.add("turnvisible");
             }
             
         })
@@ -73,8 +74,9 @@ function validate(event){
         console.log('Success:', data);
 
         if(data.count == 0) {
+            document.getElementById("search-error").classList.add("turnvisible");
             console.log('No character found');
-            alert("Não foi encontrado nenhum personagem com esse nome!")
+            
         }
         else {
             data.results.forEach(personagem => {
@@ -82,7 +84,9 @@ function validate(event){
                 nomeResultado.children[1].innerHTML = personagem.name;
                 containerNome.append(nomeResultado);
             });
+            
             console.log('Success:', data.results[0].name);
+            document.getElementById("search-error").classList.remove("turnvisible");
             //const resultado = resultadoPesquisa.content.cloneNode(true);
         }
     })
@@ -97,25 +101,3 @@ if(localStorage.getItem("token") != null) {
     document.getElementById("logout-button").classList.add("turnvisible");
     document.getElementById("form-login").classList.add("turninvisible");
 }
-
-
-// const xhr = new XMLHttpRequest();
-//     xhr.open("POST", "https://reqres.in/api/login", true);
-
-//     //Send the proper header information along with the request
-//     xhr.setRequestHeader("Content-Type", "application/json");
-
-//     xhr.onreadystatechange = () => {
-//       // Call a function when the state changes.
-//       if (xhr.readyState === XMLHttpRequest.DONE) {
-//         let response = JSON.parse(xhr.responseText);
-//         console.log(response);
-//         if ("token" in response) {
-//            //logado
-//           localStorage.setItem("token", response.token);
-//         } else {
-//           //not logado
-//         }
-//       }
-//     };
-//     xhr.send(JSON.stringify({ email, password }));
